@@ -31,3 +31,49 @@
 * Push your code every part wise.
 * Get reviewed all your code by your mentor.
 * After review, get your code merged by your mentor.
+
+---
+# How to Use:
+
+> Create a **.env** file in the root directory.  
+> * __**NODE_ENV**__ with value being **`production`** or **`development`** as per use.
+## Note: By Default goes into the Development Mode.
+
+## ENDPOINTS:
+---
+
+### Base URL Production: `localhost:4000`
+### Base URL Development: `localhost:6000`
+
+### Required Params:  
+* latitude (`XX.XX`)
+* longitude (`XX.XX`)
+
+> ## **Current**
+> Required Params:  
+> * date (YYYY-MM-DD)
+
+* `/current/summary`
+* `/current/hourly`
+
+> ## **Forecast**
+> Required Params:  
+> * start_date (YYYY-MM-DD)
+> * end_date (YYYY-MM-DD)
+
+* `/forecast/summary`
+* `/forecast/hourly`
+
+> ## **History**
+> Required Params:  
+> * start_date (YYYY-MM-DD)
+> * end_date (YYYY-MM-DD)
+
+* `/history/summary`
+* `/history/hourly`
+
+> Required Params:  
+> * past_days (int)
+
+* `/history/days/summary`
+* `/history/days/hourly`

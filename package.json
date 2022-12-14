@@ -1,0 +1,17 @@
+{
+  "name": "weatherapi",
+  "version": "1.0.0",
+  "description": "* Create a backend service in NodeJs.\r * Design the architecture of your service.\r * Understand what all Design Patterns you are gonna use in the service.\r * Review above 2 points by your mentor.\r * Start Creating following Api's:\r     *  Data of Multiple cities\r         * Api which returns weather data of multiple cities.\r         * Api also filters the result by city name or city code.\r         * Api should return the data in pagination.\r     * Detailed Forecast for the next X days.\r         * X days should be decided by the user.\r         * Data should be very detailed.\r     * Filter the data by any particular city, any particular date, any particular moment.\r     * Current weather conditions of any particular city.\r * For Weather free api, please visit any of below free services\r > * https://openweathermap.org/api\r     >   * Api Docs - https://openweathermap.org/api\r     >   * How to use - https://openweathermap.org/appid",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.0",
+    "nodemon": "^2.0.20"
+  }
+}
