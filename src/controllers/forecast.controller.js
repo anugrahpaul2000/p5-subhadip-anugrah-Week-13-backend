@@ -2,23 +2,33 @@ const { Forecast } = require('../services');
 
 const Summary = {
     get: async(req, res) => {
-        let url = Forecast.Summary;
-        url = url.replace("{start_date}", req.query.start_date);
-        url = url.replace("{end_date}", req.query.end_date);
-        url = url.replace("{latitude}", req.query.latitude);
-        url = url.replace("{longitude}", req.query.longitude);
-        res.send(await (await fetch(url)).json());
+        try {
+            params = { 
+                start_date: req.query.start_date, 
+                end_date: req.query.end_date, 
+                latitude: req.query.latitude,
+                longitude: req.query.longitude
+            };
+            res.send(await (Forecast.Summary(params)) );
+        } catch (error) {
+            res.status(400).send({error: error});
+        }
     }
 };
 
 const Hourly = {
     get: async(req, res) => {
-        let url = Forecast.Hourly;
-        url = url.replace("{start_date}", req.query.start_date);
-        url = url.replace("{end_date}", req.query.end_date);
-        url = url.replace("{latitude}", req.query.latitude);
-        url = url.replace("{longitude}", req.query.longitude);
-        res.send(await (await fetch(url)).json());
+        try {
+            params = { 
+                start_date: req.query.start_date, 
+                end_date: req.query.end_date, 
+                latitude: req.query.latitude,
+                longitude: req.query.longitude
+            };
+            res.send(await (Forecast.Hourly(params)) );
+        } catch (error) {
+            res.status(400).send({error: error});
+        }
     }
 };
 

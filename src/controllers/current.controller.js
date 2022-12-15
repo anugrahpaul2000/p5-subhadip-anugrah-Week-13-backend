@@ -2,24 +2,32 @@ const { Current } = require('../services');
 
 const Summary = {
     get: async(req, res) => {
-        let url = Current.Summary;
-        url = url.replace("{start_date}", req.query.date);
-        url = url.replace("{end_date}", req.query.date);
-        url = url.replace("{latitude}", req.query.latitude);
-        url = url.replace("{longitude}", req.query.longitude);
-        res.send(await (await fetch(url)).json());
+        try {
+            params = { 
+                date: req.query.date, 
+                latitude: req.query.latitude,
+                longitude: req.query.longitude
+            };
+            res.send(await (Current.Summary(params)) );
+        } catch (error) {
+            res.status(400).send({error: error});
+        }
     }
 };
 
 const Hourly = {
     get: async(req, res) => {
-        let url = Current.Hourly;
-        url = url.replace("{start_date}", req.query.date);
-        url = url.replace("{end_date}", req.query.date);
-        url = url.replace("{latitude}", req.query.latitude);
-        url = url.replace("{longitude}", req.query.longitude);
-        res.send(await (await fetch(url)).json());
+        try {
+            params = { 
+                date: req.query.date, 
+                latitude: req.query.latitude,
+                longitude: req.query.longitude
+            };
+            res.send(await (Current.Hourly(params)) );
+        } catch (error) {
+            res.status(400).send({error: error});
+        }
     }
 };
 
-module.exports =  { Summary, Hourly};
+module.exports =  { Summary, Hourly };
